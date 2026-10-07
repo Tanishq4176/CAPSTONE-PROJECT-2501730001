@@ -1,0 +1,35 @@
+MINI-COURIER PLANNER
+======================================================================
+Parcel prioritization
+----------------------------------------------------------------------
+ID     Destination  Weight  Priority  Deadline  Value
+P03    C3                3       10         3     50
+P01    C1                4        9         2     70
+P06    C6                7        9         5     95
+P02    C2                6        8         1     90
+P08    C8                3        8         3     60
+P04    C4                5        7         4     80
+P10    C10               2        7         5     40
+P05    C5                2        6         2     35
+P07    C7                4        5         6     55
+P09    C9                5        4         7     65
+
+Packing plan (0/1 Knapsack)
+----------------------------------------------------------------------
+Selected: P03, P08, P04, P10, P05
+Total weight : 15 / 15
+Total value  : 265
+
+Route plan (Dijkstra + Nearest-Neighbor TSP)
+----------------------------------------------------------------------
+Delivery order: D -> C3 -> C4 -> C5 -> C8 -> C10 -> D
+Expanded shortest-path traversal: D -> C3 -> C4 -> C5 -> C8 -> C10 -> C9 -> C6 -> C3 -> D
+Total route distance: 35.00 km
+
+Shortest-path legs
+Leg 1: D -> C3 (6.00 km)
+Leg 2: C3 -> C4 (2.00 km)
+Leg 3: C4 -> C5 (2.00 km)
+Leg 4: C5 -> C8 (5.00 km)
+Leg 5: C8 -> C10 (3.00 km)
+Leg 6: C10 -> C9 -> C6 -> C3 -> D (17.00 km)
